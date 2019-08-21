@@ -1,7 +1,7 @@
 <template>
   <!--  -->
   <div class="container">
-    {{temp}}
+    {{ temp }}
   </div>
 </template>
 
@@ -9,9 +9,14 @@
 export default {
   data() {
     return {
-      temp: 'hello'
+      temp: "hello"
     };
   },
+  methods: {
+    weilai() {
+      return 12;
+    }
+  }
 };
 </script>
 
@@ -19,6 +24,5 @@ export default {
 .container {
   height: 100px;
   border: 1px solid blue;
-  background: url('./background.jpg');
 }
 </style>

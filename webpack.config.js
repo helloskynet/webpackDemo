@@ -6,7 +6,7 @@ module.exports = {
   devtool: "cheap-source-map",
   mode: "development",
   entry: {
-    main: "./src/index.js"
+    main: ["core-js/stable", "./src/index.js"]
   },
   output: {
     filename: "[name].[hash].js"

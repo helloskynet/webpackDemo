@@ -14,16 +14,24 @@ function test() {
     }, 1000);
   });
 
-  let arrayLike = {
+  const arrayLike = {
     0: "tom",
     1: "65",
     2: "男",
     3: ["jane", "john", "Mary"],
     length: 4
   };
-  let arr = Array.from(arrayLike);
+  var a = 12;
+  console.log(a);
+  const arr = Array.from(arrayLike);
+  var reg = /a {4}b/;
 
   console.log(arr[0]);
+  console.log(a);
+  console.log(a);
+  console.log(a);
+  console.log(a);
+  console.log(a);
 
   console.log(arr.includes("tom"));
 }
