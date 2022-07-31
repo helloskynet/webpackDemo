@@ -1,48 +1,48 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const VueLoaderPlugin = require("vue-loader/lib/plugin");
+const { VueLoaderPlugin } = require("vue-loader");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   devtool: "cheap-source-map",
   mode: "development",
   entry: {
-    main: ["core-js/stable", "./src/index.js"]
+    main: ["core-js/stable", "./src/index.js"],
   },
   output: {
-    filename: "[name].[hash].js"
+    filename: "[name].[hash].js",
   },
   resolve: {
-    extensions: [".js", ".vue", ".json"]
+    extensions: [".js", ".vue", ".json"],
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: "babel-loader",
+        },
       },
       {
         test: /\.vue$/,
-        loader: "vue-loader"
+        loader: "vue-loader",
       },
       {
         test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"]
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.jpg$/,
-        loader: "url-loader"
-      }
-    ]
+        type: "asset/resource",
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
       title: "webpack",
-      template: "./index.html"
+      template: "./index.html",
     }),
     new VueLoaderPlugin(),
-    new CleanWebpackPlugin()
-  ]
+    new CleanWebpackPlugin(),
+  ],
 };
